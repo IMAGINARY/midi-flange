@@ -47,7 +47,6 @@ async function main() {
   }
 
   const binHiddenArgv = hideBin(process.argv);
-  console.log(binHiddenArgv);
   const argv = yargs(binHiddenArgv)
     .scriptName('midi-flange')
     .usage('$0 [options]')
