@@ -110,16 +110,7 @@ async function main() {
     .conflicts('list-outputs', 'list-inputs')
     .conflicts('i', 'all-inputs')
     .conflicts('o', 'all-outputs')
-    .help()
-    .check((argv) => {
-      const hasInputs = argv.input.length > 0 || argv['all-inputs'];
-      const hasFiles = argv.file.length > 0;
-      const hasOutputs = argv.output.length > 0 || argv['all-outputs'];
-      if (!hasInputs && !hasFiles)
-        throw new Error('Specify at least one input port or file!');
-      if (!hasOutputs) throw new Error('Specify at least one output port!');
-      return true;
-    }).argv;
+    .help().argv;
 
   if (argv['list-inputs']) {
     allInputPortNames.forEach((p) => console.log(p));
@@ -130,6 +121,13 @@ async function main() {
     allOutputPortNames.forEach((p) => console.log(p));
     process.exit(0);
   }
+
+  const hasInputs = argv.input.length > 0 || argv['all-inputs'];
+  const hasFiles = argv.file.length > 0;
+  const hasOutputs = argv.output.length > 0 || argv['all-outputs'];
+  if (!hasInputs && !hasFiles)
+    throw new Error('Specify at least one input port or file!');
+  if (!hasOutputs) throw new Error('Specify at least one output port!');
 
   const inputPortIds = argv['all-inputs'] ? allInputPortIds : argv.input;
   const outputPortIds = argv['all-outputs'] ? allOutputPortIds : argv.output;
