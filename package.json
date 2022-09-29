@@ -1,6 +1,6 @@
 {
   "name": "@imaginary-maths/midi-flange",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Connect MIDI input and output ports and play MIDI events from MIDI files to MIDI output port",
   "author": {
     "name": "Christian Stussak",
