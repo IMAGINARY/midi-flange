@@ -1,0 +1,25 @@
+{
+  "name": "@imaginary-maths/midi-flange",
+  "version": "0.1.1",
+  "description": "Connect MIDI input and output ports and play MIDI events from MIDI files to MIDI output port",
+  "author": {
+    "name": "Christian Stussak",
+    "email": "christian.stussak@imaginary.org"
+  },
+  "repository": "github:IMAGINARY/midi-flange",
+  "license": "MIT",
+  "engines": {
+    "node": ">=13.2.0"
+  },
+  "dependencies": {
+    "jzz": "^1.5.2",
+    "jzz-midi-smf": "^1.6.9",
+    "prettier": "^2.7.1",
+    "yargs": "^17.5.1"
+  },
+  "bin": "index.mjs",
+  "files": ["index.mjs"],
+  "scripts": {
+    "format": "prettier -w *.mjs *.json *.md"
+  }
+}
