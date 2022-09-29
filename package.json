@@ -18,7 +18,9 @@
     "yargs": "^17.5.1"
   },
   "bin": "index.mjs",
-  "files": ["index.mjs"],
+  "files": [
+    "index.mjs"
+  ],
   "scripts": {
     "format": "prettier -w *.mjs *.json *.md"
   }
